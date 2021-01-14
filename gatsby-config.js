@@ -38,5 +38,11 @@ module.exports = {
 			},
 			__key: 'pages',
 		},
+		{
+			resolve: `gatsby-plugin-theme-ui`,
+			options: {
+				preset: '@theme-ui/preset-tailwind',
+			},
+		},
 	],
 };
