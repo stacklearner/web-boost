@@ -1,14 +1,19 @@
 /** @jsx jsx */
-import * as React from 'react';
-import { jsx, ThemeProvider } from 'theme-ui';
+import { jsx } from 'theme-ui';
+import Layout from '../components/Layout';
+import Hero from '../components/Hero';
+import Milestones from '../components/milestone/Milestones';
+import Achievements from '../components/achievements';
+import MainContent from '../components/main';
 
 const Index = () => {
 	return (
-		<div>
-			<h1 sx={{ color: 'secondary', fontFamily: 'heading' }}>
-				Hello World
-			</h1>
-		</div>
+		<Layout>
+			<Hero />
+			<Milestones />
+			<Achievements />
+			<MainContent />
+		</Layout>
 	);
 };
 
