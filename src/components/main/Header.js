@@ -2,7 +2,7 @@
 import { jsx, Flex, Text } from 'theme-ui';
 import PropTypes from 'prop-types';
 
-const Header = ({ title, sprint, duration, summery }) => {
+const Header = ({ title, sprint, duration, summary }) => {
 	return (
 		<Flex
 			sx={{
@@ -50,7 +50,7 @@ const Header = ({ title, sprint, duration, summery }) => {
 					color: 'text',
 				}}
 			>
-				{summery}
+				{summary}
 			</Text>
 		</Flex>
 	);
@@ -60,7 +60,7 @@ Header.propTypes = {
 	title: PropTypes.string.isRequired,
 	sprint: PropTypes.string.isRequired,
 	duration: PropTypes.string.isRequired,
-	summery: PropTypes.string.isRequired,
+	summary: PropTypes.string.isRequired,
 };
 
 export default Header;

@@ -1,9 +1,12 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Image, IconButton } from 'theme-ui';
+import { jsx, Box, Flex, Text, useColorMode } from 'theme-ui';
 import PropTypes from 'prop-types';
-import WhiteIcon from '../../images/white.png';
+import IconButton from '../common/IconButton';
+import DownArrowDark from '../../images/down-arrow-dark.png';
+import DownArrowWhite from '../../images/down-arrow-white.png';
 
 const SprintItemHeader = ({ item, toggle, setToggle }) => {
+	const [colorMode] = useColorMode();
 	return (
 		<Flex sx={{ alignItems: 'center' }}>
 			<Flex
@@ -11,7 +14,7 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 					width: '3rem',
 					height: '3rem',
 					borderRadius: '50%',
-					backgroundColor: 'secondary',
+					backgroundColor: 'primary',
 					alignItems: 'center',
 					justifyContent: 'center',
 				}}
@@ -34,7 +37,9 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 						fontSize: 4,
 						fontWeight: 'body',
 						color: 'subheading',
+						cursor: 'pointer',
 					}}
+					onClick={() => setToggle(!toggle)}
 				>
 					{item.name}
 				</Text>
@@ -52,11 +57,10 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 				</Text>
 			</Box>
 			<IconButton
-				sx={{ cursor: 'pointer' }}
+				icon={colorMode === 'default' ? DownArrowDark : DownArrowWhite}
+				width='1rem'
 				onClick={() => setToggle(!toggle)}
-			>
-				<Image src={WhiteIcon} sx={{ width: '1.5rem' }} />
-			</IconButton>
+			/>
 		</Flex>
 	);
 };

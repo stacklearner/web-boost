@@ -22,7 +22,7 @@ const Congratulation = ({ message }) => {
 					sx={{
 						fontFamily: 'body',
 						fontSize: 4,
-						fontColor: 'white',
+						color: 'white',
 						ml: 4,
 					}}
 				>
@@ -46,7 +46,7 @@ const Congratulation = ({ message }) => {
 			{toggle && (
 				<Box sx={{ my: 4, ml: 5 }}>
 					<Text
-						sx={{ fontFamily: 'body', fontSize: 3, color: 'text' }}
+						sx={{ fontFamily: 'body', fontSize: 3, color: 'white' }}
 					>
 						{message}
 					</Text>

@@ -21,7 +21,7 @@ const Template = ({ milestone, direction }) => {
 							title={milestone.name}
 							sprint={milestone.sprint}
 							duration={milestone.duration}
-							summery={milestone.summery}
+							summary={milestone.summary}
 						/>
 					</Flex>
 				</Box>

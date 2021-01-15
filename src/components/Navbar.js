@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { Container, Flex, Image, Text, IconButton, jsx, Box } from 'theme-ui';
+import { Container, Flex, Image, jsx, Box } from 'theme-ui';
+import IconButton from './common/IconButton';
 import Logo from '../images/logo.png';
 import DarkIcon from '../images/dark.png';
 import WhiteIcon from '../images/white.png';
@@ -18,22 +19,12 @@ const Navbar = ({ mode, setMode }) => {
 
 				<Box sx={{ ml: 'auto' }}>
 					<IconButton
-						sx={{
-							border: 'none',
-							outline: 'none',
-							cursor: 'pointer',
-						}}
-						aria-label='Toggle dark mode'
+						icon={mode === 'default' ? DarkIcon : WhiteIcon}
+						width='1.5rem'
 						onClick={() =>
 							setMode(mode === 'default' ? 'dark' : 'default')
 						}
-					>
-						<img
-							style={{ width: '1.5rem', height: 'auto' }}
-							src={mode === 'default' ? DarkIcon : WhiteIcon}
-							alt='toggle color mode'
-						/>
-					</IconButton>
+					/>
 				</Box>
 			</Flex>
 		</Container>
