@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Text, Image, IconButton } from 'theme-ui';
+import PropTypes from 'prop-types';
 import WhiteIcon from '../../images/white.png';
 
 const SprintItemHeader = ({ item, toggle, setToggle }) => {
@@ -23,7 +24,7 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 						color: 'heading',
 					}}
 				>
-					1
+					{item.count}
 				</Text>
 			</Flex>
 			<Box sx={{ ml: 4 }}>
@@ -35,7 +36,7 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 						color: 'subheading',
 					}}
 				>
-					Play with HTML & CSS
+					{item.name}
 				</Text>
 			</Box>
 			<Box sx={{ ml: 'auto', mr: 3 }}>
@@ -47,7 +48,7 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 						color: 'text',
 					}}
 				>
-					15 Days
+					{item.duration}
 				</Text>
 			</Box>
 			<IconButton
@@ -58,6 +59,12 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 			</IconButton>
 		</Flex>
 	);
+};
+
+SprintItemHeader.propTypes = {
+	item: PropTypes.object.isRequired,
+	toggle: PropTypes.bool.isRequired,
+	setToggle: PropTypes.func.isRequired,
 };
 
 export default SprintItemHeader;

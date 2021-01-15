@@ -7,7 +7,7 @@ const ResponsiveContainer = ({ children, containerSx, boxSx }) => {
 			<Box
 				sx={{
 					p: 4,
-					width: ['100%', '100%', '100%', '70%'],
+					width: ['100%', '100%', '100%', '80%'],
 					m: 'auto',
 					...boxSx,
 				}}

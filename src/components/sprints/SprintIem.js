@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import SprintItemHeader from './SprintItemHeader';
 import SprintItemBody from './SprintItemBody';
 
@@ -15,19 +16,18 @@ const SprintItem = ({ item }) => {
 				borderRadius: '0.25rem',
 			}}
 		>
-			<SprintItemHeader toggle={toggle} setToggle={setToggle} />
-			{toggle && (
-				<SprintItemBody
-					body={`Hello World, Hello Stack Learner, Wow`}
-					keyPoints={[
-						'One Two Three',
-						'Two Three Four',
-						'Three Four Five',
-					]}
-				/>
-			)}
+			<SprintItemHeader
+				item={item}
+				toggle={toggle}
+				setToggle={setToggle}
+			/>
+			{toggle && <SprintItemBody item={item} />}
 		</Box>
 	);
+};
+
+SprintItem.propTypes = {
+	item: PropTypes.object.isRequired,
 };
 
 export default SprintItem;

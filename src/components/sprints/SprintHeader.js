@@ -1,8 +1,9 @@
 /** @jsx jsx*/
 import { jsx, Flex, Image, Text, IconButton } from 'theme-ui';
+import PropTypes from 'prop-types';
 import WhiteIcon from '../../images/white.png';
 
-const SprintHeader = ({ toggle, setToggle }) => {
+const SprintHeader = ({ duration, sprint, toggle, setToggle }) => {
 	return (
 		<Flex
 			sx={{
@@ -25,7 +26,7 @@ const SprintHeader = ({ toggle, setToggle }) => {
 					mr: 4,
 				}}
 			>
-				3 Months
+				{duration}
 			</Text>
 			<Text
 				sx={{
@@ -35,7 +36,7 @@ const SprintHeader = ({ toggle, setToggle }) => {
 					mr: 4,
 				}}
 			>
-				10 Sprints
+				{sprint} Sprints
 			</Text>
 			<IconButton
 				sx={{ cursor: 'pointer' }}
@@ -45,6 +46,13 @@ const SprintHeader = ({ toggle, setToggle }) => {
 			</IconButton>
 		</Flex>
 	);
+};
+
+SprintHeader.propTypes = {
+	duration: PropTypes.string.isRequired,
+	sprint: PropTypes.string.isRequired,
+	toggle: PropTypes.bool.isRequired,
+	setToggle: PropTypes.func.isRequired,
 };
 
 export default SprintHeader;

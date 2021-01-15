@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Flex, Text, useColorMode } from 'theme-ui';
+import { jsx, Flex, Text } from 'theme-ui';
+import PropTypes from 'prop-types';
 
-const Header = ({ title, sprint, duration, body }) => {
-	const [colorMode] = useColorMode();
+const Header = ({ title, sprint, duration, summery }) => {
 	return (
 		<Flex
 			sx={{
@@ -50,10 +50,17 @@ const Header = ({ title, sprint, duration, body }) => {
 					color: 'text',
 				}}
 			>
-				{body}
+				{summery}
 			</Text>
 		</Flex>
 	);
+};
+
+Header.propTypes = {
+	title: PropTypes.string.isRequired,
+	sprint: PropTypes.string.isRequired,
+	duration: PropTypes.string.isRequired,
+	summery: PropTypes.string.isRequired,
 };
 
 export default Header;

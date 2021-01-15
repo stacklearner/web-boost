@@ -14,6 +14,8 @@ export default {
 		milestone2: '#FECA57',
 		milestone3: '#90CAF9',
 		milestone4: '#558B2F',
+		success: '#558B2F',
+		white: '#EFEFEF',
 		modes: {
 			dark: {
 				background: '#212121',

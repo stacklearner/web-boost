@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, Box, Text } from 'theme-ui';
+import PropTypes from 'prop-types';
 
-const SprintItemBody = ({ body, keyPoints }) => {
+const SprintItemBody = ({ item }) => {
 	return (
 		<Box>
 			<Text
@@ -14,29 +15,35 @@ const SprintItemBody = ({ body, keyPoints }) => {
 					color: 'text',
 				}}
 			>
-				{body}
+				{item.contents.text}
 			</Text>
-			{keyPoints && keyPoints.length > 0 && (
-				<ul
-					sx={{
-						ml: 5,
-						mt: 3,
-						pl: 3,
-						fontFamily: 'body',
-						fontSize: 3,
-						color: 'text',
-						listDecorationStyle: 'filled',
-					}}
-				>
-					{keyPoints.map((key) => (
-						<li key={key} sx={{ ml: 3 }}>
-							{key}
-						</li>
-					))}
-				</ul>
-			)}
+			{item &&
+				item.contents.keyPoints &&
+				item.contents.keyPoints.length > 0 && (
+					<ul
+						sx={{
+							ml: 5,
+							mt: 3,
+							pl: 3,
+							fontFamily: 'body',
+							fontSize: 3,
+							color: 'text',
+							listDecorationStyle: 'filled',
+						}}
+					>
+						{item.contents.keyPoints.map((key) => (
+							<li key={key} sx={{ ml: 3 }}>
+								{key}
+							</li>
+						))}
+					</ul>
+				)}
 		</Box>
 	);
+};
+
+SprintItemBody.propTypes = {
+	item: PropTypes.object.isRequired,
 };
 
 export default SprintItemBody;

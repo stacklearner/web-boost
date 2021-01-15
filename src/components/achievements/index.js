@@ -1,37 +1,38 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Text } from 'theme-ui';
+import shortid from 'shortid';
 import Container from '../common/Container';
 
-const data = [
+const bullets = [
 	{
 		title: 'Fixed Target',
 		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
+			'আমরা আপনাদের জন্য এক বছরের গোল সেট করে দিয়েছি এবং আপনাদের এক বছরের জন্য টার্গেট ফিক্সড',
 	},
 	{
-		title: 'Fixed Target',
+		title: 'Small Goal',
 		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
+			'ছোট ছোট স্প্রিন্টের মাধ্যমে আমরা বড় গোলটাকে অনেক গুলো ছোট ছোট গোলে ভেঙ্গে ফেলেছি যেন সহজে অর্জন করা যায়',
 	},
 	{
-		title: 'Fixed Target',
+		title: 'Short Journey',
 		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
+			'ছোট গোল হওয়ার কারণে জার্নিটাও অনেক ছোট হবে। রাস্তায় হোঁচট খাওয়ার সম্ভাবনা ও অনেক কম থাকবে।',
 	},
 	{
-		title: 'Fixed Target',
+		title: 'Zero Distraction',
 		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
+			'ছোট জার্নি ছোট রাস্তা। রাস্তা যদি ছোট হয় তাহলে এদিকে ওদিকে ডিস্ট্রাক্ট হয়ে যাওয়ার ও কোনো চান্স থাকবে না',
 	},
 	{
-		title: 'Fixed Target',
+		title: 'Monitor Progress',
 		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
+			'যেহেতু অনেক গুলো ছোট ছোট গোল রয়েছে, তাই আপনি সহজেই নিজের প্রোগ্রেস ট্রাক করতে পারবেন অনেক সহজে',
 	},
 	{
-		title: 'Fixed Target',
+		title: 'Big Achievement',
 		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
+			'সব ছোট গোল যখন পূরণ হয়ে যাবে তখন দেখা যাবে এচিভমেন্টটা অনেক বড় হয়ে গেছে',
 	},
 ];
 
@@ -80,8 +81,12 @@ const Achievements = () => {
 					alignItems: 'center',
 				}}
 			>
-				{data.map((item) => (
-					<Item title={item.title} body={item.body} />
+				{bullets.map((item) => (
+					<Item
+						key={shortid.generate()}
+						title={item.title}
+						body={item.body}
+					/>
 				))}
 			</Flex>
 		</Container>

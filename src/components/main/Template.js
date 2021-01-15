@@ -1,12 +1,13 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Flex, Text } from 'theme-ui';
+import { jsx, Image, Box, Flex } from 'theme-ui';
+import PropTypes from 'prop-types';
 
 import Container from '../common/Container';
 import Header from './Header';
 import Sprints from '../sprints';
 import Img from '../../images/icon.png';
 
-const Template = ({ direction }) => {
+const Template = ({ milestone, direction }) => {
 	return (
 		<Box>
 			<Container>
@@ -17,17 +18,26 @@ const Template = ({ direction }) => {
 							sx={{ width: ['100%', '100%', '40%'] }}
 						/>
 						<Header
-							title='This is A Dummy Title for Test'
-							sprint='10'
-							duration='3 months'
-							body='The component parses a URL and loads in the appropriate markup and external SDKs to play media from various sources. Props can be passed in to control playback and react to events such as buffering or media ending. See the demo source for a full example.'
+							title={milestone.name}
+							sprint={milestone.sprint}
+							duration={milestone.duration}
+							summery={milestone.summery}
 						/>
 					</Flex>
 				</Box>
 			</Container>
-			<Sprints />
+			<Sprints milestone={milestone} />
 		</Box>
 	);
+};
+
+Template.propTypes = {
+	milestone: PropTypes.object.isRequired,
+	direction: PropTypes.string.isRequired,
+};
+
+Template.defaultProps = {
+	direction: 'ltr',
 };
 
 export default Template;
