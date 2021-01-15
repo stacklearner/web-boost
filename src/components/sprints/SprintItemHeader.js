@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Image } from 'theme-ui';
+import { jsx, Box, Flex, Text, Image, IconButton } from 'theme-ui';
 import WhiteIcon from '../../images/white.png';
 
-const SprintItemHeader = ({ item }) => {
+const SprintItemHeader = ({ item, toggle, setToggle }) => {
 	return (
 		<Flex sx={{ alignItems: 'center' }}>
 			<Flex
@@ -50,7 +50,12 @@ const SprintItemHeader = ({ item }) => {
 					15 Days
 				</Text>
 			</Box>
-			<Image src={WhiteIcon} sx={{ width: '1.5rem' }} />
+			<IconButton
+				sx={{ cursor: 'pointer' }}
+				onClick={() => setToggle(!toggle)}
+			>
+				<Image src={WhiteIcon} sx={{ width: '1.5rem' }} />
+			</IconButton>
 		</Flex>
 	);
 };

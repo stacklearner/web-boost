@@ -2,7 +2,6 @@
 import { jsx, Container, Box } from 'theme-ui';
 
 const ResponsiveContainer = ({ children, containerSx, boxSx }) => {
-	console.log(containerSx);
 	return (
 		<Container sx={{ ...containerSx }}>
 			<Box

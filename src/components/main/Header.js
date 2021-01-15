@@ -1,7 +1,8 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Flex, Text } from 'theme-ui';
+import { jsx, Image, Box, Flex, Text, useColorMode } from 'theme-ui';
 
 const Header = ({ title, sprint, duration, body }) => {
+	const [colorMode] = useColorMode();
 	return (
 		<Flex
 			sx={{
@@ -36,11 +37,10 @@ const Header = ({ title, sprint, duration, body }) => {
 						fontSize: 4,
 						fontFamily: 'body',
 						color: 'subtitle',
-						ml: 4,
+						mx: 4,
 					}}
 				>
-					Duration: {sprint}
-					{duration}
+					Duration: {duration}
 				</Text>
 			</Flex>
 			<Text

@@ -1,8 +1,8 @@
 /** @jsx jsx*/
-import { jsx, Flex, Image, Text } from 'theme-ui';
+import { jsx, Flex, Image, Text, IconButton } from 'theme-ui';
 import WhiteIcon from '../../images/white.png';
 
-const SprintHeader = () => {
+const SprintHeader = ({ toggle, setToggle }) => {
 	return (
 		<Flex
 			sx={{
@@ -37,7 +37,12 @@ const SprintHeader = () => {
 			>
 				10 Sprints
 			</Text>
-			<Image src={WhiteIcon} sx={{ width: '2rem' }} />
+			<IconButton
+				sx={{ cursor: 'pointer' }}
+				onClick={() => setToggle(!toggle)}
+			>
+				<Image src={WhiteIcon} sx={{ width: '2rem' }} />
+			</IconButton>
 		</Flex>
 	);
 };

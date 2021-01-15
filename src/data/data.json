@@ -1,0 +1,49 @@
+{
+    "name": "Web Boost",
+    "version": "v0.1.0",
+    "author": "HM Nayem",
+    "site": {
+        "meta": {
+            "title": "Web Boost",
+            "subtitle": "A Beginner-Friendly Fullstack Web Development Course Using Agile",
+            "description": "An Agile way to learn web development. This document will provide all the necessary guidelines need a beginner to be a fullstack web developer. Fullstack Development journey begins with Web Boost",
+            "keywords": ["web development", "programming", "html", "css", "javascript", "web design", "jquery", "bootstrap", "frontend development", "backend development", "fullstack development", "react", "nodejs"] 
+        },
+        "assets": {
+            "logo": "logo",
+            "favicon": "icon",
+            "mode": {
+                "dark": "dark-mode-icon",
+                "white": "white-mode-icon"
+            },
+            "duration": {
+                "dark": "duration-icon-dark",
+                "white": "duration-icon-white"
+            },
+            "sprint": {
+                "dark": "sprint-icon-dark",
+                "white": "sprint-icon-white"
+            }
+        }
+    },
+    "milestoneSummary": {
+        "title": "Learn with Agile Methodology",
+        "summery": "এই ওয়েবসাইটটি তৈরি করা হয়েছে সমস্ত বিগিনার প্রোগ্রামারদের জন্য যারা সঠিক গাইডলাইনের অভাবে বছরের পর বছর চেষ্টা করেও ভালো একজন ওয়েব ডেভেলপার হতে পারছেন না। Agile এবং Scrum মেনে আপনাদের জন্য তৈরি করা হয়েছে পুরো এক বছরের কারিকুলাম। যেখানে রয়েছে চারটা মাইলস্টোন এবং ত্রিশটা স্প্রিন্ট। এখন হয়তো টার্মস গুলো বুঝতে একটু কষ্ট হচ্ছে। পুরো ডকুমেন্ট পড়া শেষে আপনি সব কিছু নিজেই বুঝে যাবেন।",
+        "one": {
+            "name": "First Milestone",
+            "body": "একজন ওয়েব ডিজাইনার হয়ে ওঠা"
+        },
+        "two": {
+            "name": "Second Milestone",
+            "body": "জাভাস্ক্রিপ্ট প্রোগ্রামিং ল্যাংগুয়েজটি আয়ত্ত করা"
+        },
+        "three": {
+            "name": "Third Milestone",
+            "body": "ডাইনামিক ওয়েবসাইট এবং এপিআই তৈরি করতে শেখা"
+        },
+        "four": {
+            "name": "Fourth Milestone",
+            "body": "ফ্রন্টেন্ড ব্যাকেন্ড সহ কমপ্লিট অ্যাপলিকেশন তৈরি করা"
+        }
+    }
+}

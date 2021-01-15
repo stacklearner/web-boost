@@ -2,7 +2,6 @@
 import { jsx, Flex, Text } from 'theme-ui';
 
 const MilestoneItem = ({ count, name, target, color }) => {
-	console.log(color);
 	return (
 		<Flex
 			sx={{

@@ -29,11 +29,13 @@ const Milestones = () => {
 						marginBottom: 5,
 					}}
 				>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Doloremque necessitatibus, officia blanditiis eligendi
-					quaerat nisi expedita exercitationem est aspernatur libero
-					optio cum odio quis pariatur, temporibus at voluptate
-					asperiores ab?
+					এই ওয়েবসাইটটি তৈরি করা হয়েছে সমস্ত বিগিনার প্রোগ্রামারদের
+					জন্য যারা সঠিক গাইডলাইনের অভাবে বছরের পর বছর চেষ্টা করেও
+					ভালো একজন ওয়েব ডেভেলপার হতে পারছেন না। Agile এবং Scrum মেনে
+					আপনাদের জন্য তৈরি করা হয়েছে পুরো এক বছরের কারিকুলাম। যেখানে
+					রয়েছে চারটা মাইলস্টোন এবং ত্রিশটা স্প্রিন্ট। এখন হয়তো টার্মস
+					গুলো বুঝতে একটু কষ্ট হচ্ছে। পুরো ডকুমেন্ট পড়া শেষে আপনি সব
+					কিছু নিজেই বুঝে যাবেন।
 				</Text>
 			</Box>
 			<Flex
