@@ -6,7 +6,13 @@ import PropTypes from 'prop-types';
 const FaqItemBody = ({ item }) => {
 	return (
 		<Box>
-			<Text fontFamily='bangla' ml='5' mt='3' pl='3' fontSize='3'>
+			<Text
+				fontFamily='bangla'
+				ml='5'
+				mt='3'
+				pl={[0, 0, 3, 3]}
+				fontSize={[2, 2, 3, 3]}
+			>
 				{item.text}
 			</Text>
 			{item && item.keyPoints && item.keyPoints.length > 0 && (
@@ -14,9 +20,9 @@ const FaqItemBody = ({ item }) => {
 					sx={{
 						ml: 5,
 						mt: 3,
-						pl: 3,
+						pl: [0, 0, 3, 3],
+						fontSize: [2, 2, 3, 3],
 						fontFamily: 'bangla',
-						fontSize: 3,
 						color: 'text',
 						listDecorationStyle: 'filled',
 					}}
