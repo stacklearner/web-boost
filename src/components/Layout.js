@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 			{children}
 			<MessengerCustomerChat
 				pageId='101277768070549'
-				appId='3434413739996523'
+				appId='419750239260639'
 			/>
 		</div>
 	);
