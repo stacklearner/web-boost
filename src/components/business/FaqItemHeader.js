@@ -28,9 +28,10 @@ const FaqItemHeader = ({ question, toggle, setToggle }) => {
 				<Text
 					width='70%'
 					ml={[3, 3, 3, 4, 4]}
-					color='subheading'
+					color='heading'
 					cursor='pointer'
 					fontWeight='bold'
+					fontFamily='bangla'
 					fontSize={[2, 3, 3, 4, 4]}
 					onClick={() => setToggle(!toggle)}
 				>
