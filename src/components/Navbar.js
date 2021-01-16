@@ -1,42 +1,32 @@
 /** @jsx jsx */
-import { Container, Flex, Image, Text, IconButton, jsx, Box } from 'theme-ui';
-import Logo from '../images/logo.png';
-import DarkIcon from '../images/dark.png';
-import WhiteIcon from '../images/white.png';
+import { Image, jsx } from 'theme-ui';
+
+import { Box, Flex } from './common';
+import { getImage, getIcon } from '../assets';
+import IconButton from './common/IconButton';
 
 const Navbar = ({ mode, setMode }) => {
+	const lMode = mode === 'default' ? 'light' : 'dark';
 	return (
-		<Container p={3}>
+		<Box p={3}>
 			<Flex
-				sx={{
-					width: ['100%', '100%', '100%', '70%'],
-					m: 'auto',
-					alignItems: 'center',
-				}}
+				width={['100%', '100%', '100%', '80%']}
+				m='auto'
+				alignItems='center'
 			>
-				<Image sx={{ width: '4rem' }} src={Logo} />
+				<Image sx={{ width: '4rem' }} src={getImage('logo')} />
 
-				<Box sx={{ ml: 'auto' }}>
+				<Box ml='auto'>
 					<IconButton
-						sx={{
-							border: 'none',
-							outline: 'none',
-							cursor: 'pointer',
-						}}
-						aria-label='Toggle dark mode'
+						icon={getIcon('toggle', lMode)}
+						width='1.5rem'
 						onClick={() =>
 							setMode(mode === 'default' ? 'dark' : 'default')
 						}
-					>
-						<img
-							style={{ width: '1.5rem', height: 'auto' }}
-							src={mode === 'default' ? DarkIcon : WhiteIcon}
-							alt='toggle color mode'
-						/>
-					</IconButton>
+					/>
 				</Box>
 			</Flex>
-		</Container>
+		</Box>
 	);
 };
 

@@ -1,28 +1,37 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import Container from '../common/Container';
+import PropTypes from 'prop-types';
+
+import { Box, Container } from '../common';
 import SprintHeader from './SprintHeader';
 import Sprints from './Sprints';
+import Congratulation from './Congratulation';
 
-const SprintIndex = () => {
-	const [toggle, setToggle] = useState(false);
+const SprintIndex = ({ milestone, open }) => {
+	const [toggle, setToggle] = useState(open);
 	return (
-		<Box
-			sx={{
-				backgroundColor: 'backgroundSecondary',
-			}}
-		>
+		<Box backgroundColor='backgroundSecondary'>
 			<Container>
-				<SprintHeader toggle={toggle} setToggle={setToggle} />
+				<SprintHeader
+					sprint={milestone.sprint}
+					duration={milestone.duration}
+					toggle={toggle}
+					setToggle={setToggle}
+				/>
 				{toggle && (
-					<Box sx={{ py: 4 }}>
-						<Sprints />
+					<Box py='4'>
+						<Sprints sprints={milestone.sprints} />
+						<Congratulation message={milestone.congratulation} />
 					</Box>
 				)}
 			</Container>
 		</Box>
 	);
+};
+
+SprintIndex.propTypes = {
+	milestone: PropTypes.object.isRequired,
 };
 
 export default SprintIndex;

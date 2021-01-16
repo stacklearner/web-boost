@@ -1,63 +1,60 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Image, IconButton } from 'theme-ui';
-import WhiteIcon from '../../images/white.png';
+import { jsx, useColorMode } from 'theme-ui';
+import PropTypes from 'prop-types';
+
+import { Box, Flex, FlexCentered, Text, IconButton } from '../common';
+import { getIcon } from '../../assets';
 
 const SprintItemHeader = ({ item, toggle, setToggle }) => {
+	const [colorMode] = useColorMode();
+	const mode = colorMode === 'default' ? 'light' : 'dark';
 	return (
-		<Flex sx={{ alignItems: 'center' }}>
-			<Flex
-				sx={{
-					width: '3rem',
-					height: '3rem',
-					borderRadius: '50%',
-					backgroundColor: 'secondary',
-					alignItems: 'center',
-					justifyContent: 'center',
-				}}
-			>
-				<Text
-					sx={{
-						fontFamily: 'body',
-						fontSize: 4,
-						fontWeight: 'bold',
-						color: 'heading',
-					}}
+		<Flex alignItems='center' flexWrap='wrap'>
+			<Flex alignItems='center' width={['100%', '100%', '60%', '60%']}>
+				<FlexCentered
+					width='3rem'
+					height='3rem'
+					borderRadius='50%'
+					backgroundColor='primary'
 				>
-					1
+					<Text fontWeight='bold' color='reverse'>
+						{item.count}
+					</Text>
+				</FlexCentered>
+				<Text
+					ml={[3, 3, 3, 4, 4]}
+					color='subheading'
+					cursor='pointer'
+					fontWeight='bold'
+					fontSize={[2, 3, 3, 4, 4]}
+					onClick={() => setToggle(!toggle)}
+				>
+					{item.name}
 				</Text>
 			</Flex>
-			<Box sx={{ ml: 4 }}>
-				<Text
-					sx={{
-						fontFamily: 'body',
-						fontSize: 4,
-						fontWeight: 'body',
-						color: 'subheading',
-					}}
-				>
-					Play with HTML & CSS
-				</Text>
-			</Box>
-			<Box sx={{ ml: 'auto', mr: 3 }}>
-				<Text
-					sx={{
-						fontFamily: 'body',
-						fontSize: 3,
-						fontWeight: 'body',
-						color: 'text',
-					}}
-				>
-					15 Days
-				</Text>
-			</Box>
-			<IconButton
-				sx={{ cursor: 'pointer' }}
-				onClick={() => setToggle(!toggle)}
+			<Flex
+				alignItems='center'
+				ml={[5, 5, 'auto', 'auto']}
+				width={['100%', '100%', '40%', '40%']}
 			>
-				<Image src={WhiteIcon} sx={{ width: '1.5rem' }} />
-			</IconButton>
+				<Box ml={[0, 0, 'auto', 'auto']} mr='3'>
+					<Text fontSize={[2, 2, 3, 3, 3]}>{item.duration}</Text>
+				</Box>
+				<IconButton
+					ml={['auto', 'auto', 0, 0, 0]}
+					icon={getIcon('downArrow', mode)}
+					width='1rem'
+					onClick={() => setToggle(!toggle)}
+				/>
+			</Flex>
 		</Flex>
 	);
+};
+
+SprintItemHeader.propTypes = {
+	item: PropTypes.object.isRequired,
+	toggle: PropTypes.bool.isRequired,
+	setToggle: PropTypes.func.isRequired,
 };
 
 export default SprintItemHeader;

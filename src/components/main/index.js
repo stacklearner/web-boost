@@ -1,12 +1,22 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx } from 'theme-ui';
+
+import { Box } from '../common';
 import Template from './Template';
+import getData from '../../mapdata';
 
 const Main = () => {
+	const milestones = getData('milestones');
 	return (
 		<Box>
-			<Template direction='ltr' />
-			<Template direction='rtl' />
+			{milestones &&
+				milestones.length > 0 &&
+				milestones.map((milestone, index) => (
+					<Template
+						milestone={milestone}
+						open={index === 0 ? true : false}
+					/>
+				))}
 		</Box>
 	);
 };

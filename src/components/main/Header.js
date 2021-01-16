@@ -1,59 +1,48 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Flex, Text, useColorMode } from 'theme-ui';
+import { jsx } from 'theme-ui';
+import PropTypes from 'prop-types';
 
-const Header = ({ title, sprint, duration, body }) => {
-	const [colorMode] = useColorMode();
+import { Flex, Heading, Text } from '../common';
+
+const Header = ({ title, sprint, duration, summary }) => {
 	return (
-		<Flex
-			sx={{
-				width: ['100%', '100%', '40%'],
-				flexDirection: 'column',
-				justifyContent: 'center',
-				mx: 5,
-				my: 3,
-			}}
-		>
-			<Text
-				sx={{
-					fontSize: 6,
-					fontFamily: 'heading',
-					color: 'title',
-				}}
-			>
+		<Flex flexDirection='column' justifyContent='center' px={[3, 4, 5]}>
+			<Heading color='primary' fontSize={[5, 6]}>
 				{title}
-			</Text>
-			<Flex sx={{ mt: 2, mb: 4 }}>
-				<Text
-					sx={{
-						fontSize: 4,
-						fontFamily: 'body',
-						color: 'subtitle',
-					}}
+			</Heading>
+			<Flex mt='3' mb='4' flexWrap='wrap'>
+				<Heading
+					as='h2'
+					fontSize='4'
+					fontFamily='body'
+					color='subtitle'
+					width={['100%', '100%', '100%', 'auto']}
 				>
 					SPRINT: {sprint}
-				</Text>
-				<Text
-					sx={{
-						fontSize: 4,
-						fontFamily: 'body',
-						color: 'subtitle',
-						mx: 4,
-					}}
+				</Heading>
+				<Heading
+					as='h2'
+					fontSize='4'
+					fontFamily='body'
+					color='subtitle'
+					width={['100%', '100%', '100%', 'auto']}
+					mx={[0, 0, 0, 4]}
 				>
 					Duration: {duration}
-				</Text>
+				</Heading>
 			</Flex>
-			<Text
-				sx={{
-					fontSize: 3,
-					fontFamily: 'body',
-					color: 'text',
-				}}
-			>
-				{body}
+			<Text fontFamily='bangla' fontSize='3'>
+				{summary}
 			</Text>
 		</Flex>
 	);
+};
+
+Header.propTypes = {
+	title: PropTypes.string.isRequired,
+	sprint: PropTypes.string.isRequired,
+	duration: PropTypes.string.isRequired,
+	summary: PropTypes.string.isRequired,
 };
 
 export default Header;

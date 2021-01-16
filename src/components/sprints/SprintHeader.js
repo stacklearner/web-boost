@@ -1,50 +1,53 @@
 /** @jsx jsx*/
-import { jsx, Flex, Image, Text, IconButton } from 'theme-ui';
-import WhiteIcon from '../../images/white.png';
+import { jsx, Image, useColorMode } from 'theme-ui';
+import PropTypes from 'prop-types';
 
-const SprintHeader = ({ toggle, setToggle }) => {
+import { Flex, Text, IconButton } from '../common';
+import { getIcon } from '../../assets';
+
+const SprintHeader = ({ duration, sprint, toggle, setToggle }) => {
+	const [colorMode] = useColorMode();
+	const mode = colorMode === 'default' ? 'light' : 'dark';
 	return (
-		<Flex
-			sx={{
-				alignItems: 'center',
-				flexWrap: 'wrap',
-			}}
-		>
-			<Image src={WhiteIcon} sx={{ width: '2rem' }} />
-			<Text
-				sx={{ fontFamily: 'body', fontSize: '4', color: 'text', ml: 4 }}
+		<Flex alignItems='center' flexWrap='wrap'>
+			<Flex
+				width={['100%', '100%', '100%', 'auto', 'auto']}
+				alignItems='center'
 			>
-				Explore The Sprints
-			</Text>
-			<Text
-				sx={{
-					fontFamily: 'body',
-					fontSize: '4',
-					color: 'text',
-					ml: 'auto',
-					mr: 4,
-				}}
+				<Image src={getIcon('sprint', mode)} sx={{ width: '3rem' }} />
+				<Text
+					ml={[3, 3, 3, 4, 4]}
+					fontSize={[4, 4, 4, 5, 5]}
+					fontWeight='heading'
+					cursor='pointer'
+					onClick={() => setToggle(!toggle)}
+				>
+					What's Inside? Explore The Sprints
+				</Text>
+			</Flex>
+			<Flex
+				width={['100%', '100%', '100%', 'auto', 'auto']}
+				alignItems='center'
+				ml={[5, 5, 5, 'auto', 'auto']}
 			>
-				3 Months
-			</Text>
-			<Text
-				sx={{
-					fontFamily: 'body',
-					fontSize: '4',
-					color: 'text',
-					mr: 4,
-				}}
-			>
-				10 Sprints
-			</Text>
-			<IconButton
-				sx={{ cursor: 'pointer' }}
-				onClick={() => setToggle(!toggle)}
-			>
-				<Image src={WhiteIcon} sx={{ width: '2rem' }} />
-			</IconButton>
+				<Text mr={[3, 3, 3, 4, 4]}>{duration}</Text>
+				<Text mr={[3, 3, 3, 4, 4]}>{sprint} Sprints</Text>
+				<IconButton
+					ml={['auto', 'auto', 'auto', 0, 0]}
+					icon={getIcon('downArrow', mode)}
+					width='2rem'
+					onClick={() => setToggle(!toggle)}
+				/>
+			</Flex>
 		</Flex>
 	);
+};
+
+SprintHeader.propTypes = {
+	duration: PropTypes.string.isRequired,
+	sprint: PropTypes.string.isRequired,
+	toggle: PropTypes.bool.isRequired,
+	setToggle: PropTypes.func.isRequired,
 };
 
 export default SprintHeader;

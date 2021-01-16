@@ -1,23 +1,16 @@
 /** @jsx jsx */
 import { useColorMode, jsx } from 'theme-ui';
-import { useEffect } from 'react';
+import '../static/css/font.css';
 
 import Navbar from './Navbar';
-import data from '../data/data.json';
-
-console.log(data);
+import SEO from './SEO';
 
 const Layout = ({ children }) => {
 	const [colorMode, setColorMode] = useColorMode();
 
-	useEffect(() => {
-		if (colorMode === 'default') {
-			setColorMode('dark');
-		}
-	}, []);
-
 	return (
 		<div>
+			<SEO />
 			<Navbar mode={colorMode} setMode={setColorMode} />
 			{children}
 		</div>

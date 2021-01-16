@@ -1,89 +1,34 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text } from 'theme-ui';
-import Container from '../common/Container';
+import { jsx } from 'theme-ui';
+import shortid from 'shortid';
 
-const data = [
-	{
-		title: 'Fixed Target',
-		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
-	},
-	{
-		title: 'Fixed Target',
-		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
-	},
-	{
-		title: 'Fixed Target',
-		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
-	},
-	{
-		title: 'Fixed Target',
-		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
-	},
-	{
-		title: 'Fixed Target',
-		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
-	},
-	{
-		title: 'Fixed Target',
-		body:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, beatae.',
-	},
-];
+import { Box, FlexCentered, Container, Heading, Text } from '../common';
 
 const Item = ({ title, body }) => {
 	return (
-		<Box
-			sx={{
-				mx: 2,
-				my: 4,
-				width: ['95%', '45%', '30%'],
-				display: 'block',
-			}}
-		>
-			<Text
-				sx={{
-					fontFamily: 'heading',
-					fontSize: 5,
-					fontWeight: 'text',
-					color: 'title',
-				}}
-			>
-				{title}
-			</Text>
-			<Text
-				sx={{
-					mt: 2,
-					fontFamily: 'body',
-					fontSize: 3,
-					fontWeight: 'text',
-					color: 'text',
-				}}
-			>
+		<Box mx='3' my='4' width={['95%', '45%', '30%']} display='block'>
+			<Heading color='primary'>{title}</Heading>
+			<Text mt='2' fontSize='3' fontFamily='bangla'>
 				{body}
 			</Text>
 		</Box>
 	);
 };
 
-const Achievements = () => {
+const Achievements = ({ data }) => {
 	return (
-		<Container containerSx={{ backgroundColor: 'backgroundSecondary' }}>
-			<Flex
-				sx={{
-					flexWrap: 'wrap',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
+		<Container
+			containerSx={{ backgroundColor: 'backgroundSecondary', mt: '4' }}
+		>
+			<FlexCentered flexWrap='wrap'>
 				{data.map((item) => (
-					<Item title={item.title} body={item.body} />
+					<Item
+						key={shortid.generate()}
+						title={item.title}
+						body={item.body}
+					/>
 				))}
-			</Flex>
+			</FlexCentered>
 		</Container>
 	);
 };
