@@ -12,7 +12,7 @@ const SectionTitle = ({ title, body }) => {
 			<Heading fontSize={[5, 5, 5, 6, 6]} marginBottom={[3, 3, 3, 4, 4]}>
 				{title}
 			</Heading>
-			<Text lineHeight='2rem' marginBottom='5'>
+			<Text fontFamily='bangla' lineHeight='2rem' marginBottom='5'>
 				{body}
 			</Text>
 		</Box>
