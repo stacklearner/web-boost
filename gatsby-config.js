@@ -1,6 +1,9 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Web Boost - Follow Agile to Learn',
+		title:
+			'Web Boost - A Beginner-Friendly Fullstack Web Development Course Using Agile',
+		description:
+			'An Agile way to learn web development. This document will provide all the necessary guidelines need a beginner to be a fullstack web developer. Fullstack Development journey begins with Web Boost',
 	},
 	plugins: [
 		'gatsby-plugin-styled-components',
