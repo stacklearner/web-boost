@@ -3,6 +3,7 @@ import milestone2 from '../images/milestone2.png';
 import milestone3 from '../images/milestone3.png';
 import milestone4 from '../images/milestone4.png';
 import logo from '../images/logo.png';
+import hero from '../images/hero-image.png';
 
 // Icons
 import icon from '../images/icon.png';
@@ -32,6 +33,7 @@ const assets = {
 		milestone3,
 		milestone4,
 		logo,
+		hero,
 	},
 	icon: {
 		icon,
