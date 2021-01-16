@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title:
-			'Web Boost - A Beginner-Friendly Fullstack Web Development Course Using Following',
+			'Web Boost - A Beginner-Friendly Fullstack Web Development Journey Following Agile',
 		description:
 			'An Agile way to learn web development. This document will provide all the necessary guidelines need a beginner to be a fullstack web developer. Fullstack Development journey begins with Web Boost',
 		author: 'HM Nayem',
