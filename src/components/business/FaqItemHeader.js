@@ -2,35 +2,41 @@
 import { jsx, useColorMode, Image } from 'theme-ui';
 import PropTypes from 'prop-types';
 
-import { Flex, Box, FlexCentered, Text, IconButton } from '../common';
+import { Flex, FlexCentered, Text, IconButton } from '../common';
 import { getIcon } from '../../assets';
 
 const FaqItemHeader = ({ question, toggle, setToggle }) => {
 	const [colorMode] = useColorMode();
 	const mode = colorMode === 'default' ? 'light' : 'dark';
 	return (
-		<Flex alignItems='center'>
-			<FlexCentered
-				width='3rem'
-				height='3rem'
-				borderRadius='50%'
-				backgroundColor='primary'
-			>
-				<Image
-					src={getIcon('checked', mode)}
-					sx={{ width: '1.8rem', height: 'auto' }}
-				/>
-			</FlexCentered>
-			<Box ml='4'>
+		<Flex alignItems='center' flexWrap='wrap'>
+			<Flex alignItems='center' width='90%'>
+				<FlexCentered
+					width='3rem'
+					height='3rem'
+					borderRadius='50%'
+					backgroundColor='primary'
+				>
+					<Image
+						src={getIcon('checked', mode)}
+						sx={{
+							width: '1.5rem',
+							height: 'auto',
+						}}
+					/>
+				</FlexCentered>
 				<Text
-					fontSize='4'
+					width='70%'
+					ml={[3, 3, 3, 4, 4]}
+					color='subheading'
 					cursor='pointer'
-					fontFamily='bangla'
+					fontWeight='bold'
+					fontSize={[2, 3, 3, 4, 4]}
 					onClick={() => setToggle(!toggle)}
 				>
 					{question}
 				</Text>
-			</Box>
+			</Flex>
 			<IconButton
 				icon={getIcon('downArrow', mode)}
 				width='1rem'
