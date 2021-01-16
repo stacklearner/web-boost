@@ -1,6 +1,9 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import shortid from 'shortid';
+
+import Box from '../common/Box';
+import FlexCentered from '../common/FlexCentered';
 import Container from '../common/Container';
 import SectionTitle from '../common/SectionTitle';
 import MilestoneItem from './MilestoneItem';
@@ -10,20 +13,12 @@ const Milestones = () => {
 	const milestoneSummary = getData('milestoneSummary');
 	const milestones = milestoneSummary.milestones || [];
 	return (
-		<Container
-			containerSx={{ marginTop: 250, paddingTop: 20, paddingBottom: 20 }}
-		>
+		<Container containerSx={{ mt: '15rem', pt: '1.25rem', pb: '1.25rem' }}>
 			<SectionTitle
 				title={milestoneSummary.title}
 				body={milestoneSummary.summary}
 			/>
-			<Flex
-				sx={{
-					flexWrap: 'wrap',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
+			<FlexCentered flexWrap='wrap'>
 				{Object.keys(milestoneSummary.milestones).map((item) => (
 					<MilestoneItem
 						key={shortid.generate()}
@@ -33,7 +28,7 @@ const Milestones = () => {
 						color={milestones[item].color}
 					/>
 				))}
-			</Flex>
+			</FlexCentered>
 		</Container>
 	);
 };

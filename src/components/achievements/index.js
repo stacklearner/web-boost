@@ -1,38 +1,18 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import shortid from 'shortid';
+
+import Box from '../common/Box';
+import FlexCentered from '../common/FlexCentered';
+import Heading from '../common/Heading';
+import Text from '../common/Text';
 import Container from '../common/Container';
-import getData from '../../mapdata';
 
 const Item = ({ title, body }) => {
 	return (
-		<Box
-			sx={{
-				mx: 3,
-				my: 4,
-				width: ['95%', '45%', '30%'],
-				display: 'block',
-			}}
-		>
-			<Text
-				sx={{
-					fontFamily: 'heading',
-					fontSize: 5,
-					fontWeight: 'text',
-					color: 'title',
-				}}
-			>
-				{title}
-			</Text>
-			<Text
-				sx={{
-					mt: 2,
-					fontFamily: 'body',
-					fontSize: 3,
-					fontWeight: 'text',
-					color: 'text',
-				}}
-			>
+		<Box mx='3' my='4' width={['95%', '45%', '30%']} display='block'>
+			<Heading color='primary'>{title}</Heading>
+			<Text mt='2' fontSize='3' fontFamily='bangla'>
 				{body}
 			</Text>
 		</Box>
@@ -41,14 +21,10 @@ const Item = ({ title, body }) => {
 
 const Achievements = ({ data }) => {
 	return (
-		<Container containerSx={{ backgroundColor: 'backgroundSecondary' }}>
-			<Flex
-				sx={{
-					flexWrap: 'wrap',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
+		<Container
+			containerSx={{ backgroundColor: 'backgroundSecondary', mt: '4' }}
+		>
+			<FlexCentered flexWrap='wrap'>
 				{data.map((item) => (
 					<Item
 						key={shortid.generate()}
@@ -56,7 +32,7 @@ const Achievements = ({ data }) => {
 						body={item.body}
 					/>
 				))}
-			</Flex>
+			</FlexCentered>
 		</Container>
 	);
 };

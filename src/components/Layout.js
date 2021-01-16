@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { useColorMode, jsx } from 'theme-ui';
+import '../static/css/font.css';
 
 import Navbar from './Navbar';
 

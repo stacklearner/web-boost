@@ -7,7 +7,12 @@ import Text from '../common/Text';
 
 const MilestoneItem = ({ count, name, target, color }) => {
 	return (
-		<Flex m='2' mt='4' width={['95%', '45%', '30%']} display='block'>
+		<Flex
+			m={[0, 1, 1, 2, 2]}
+			mt='4'
+			width={['100%', '100%', '48%', '30%']}
+			display='block'
+		>
 			<FlexCentered flexDirection='column'>
 				<FlexCentered
 					width='6rem'
@@ -24,7 +29,7 @@ const MilestoneItem = ({ count, name, target, color }) => {
 				<Heading as='h3' mt='4' textAlign='center'>
 					{name}
 				</Heading>
-				<Text mt='3' textAlign='center'>
+				<Text mt='3' fontFamily='bangla' textAlign='center'>
 					{target}
 				</Text>
 			</FlexCentered>

@@ -1,6 +1,12 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, useColorMode } from 'theme-ui';
+import { jsx, useColorMode } from 'theme-ui';
 import PropTypes from 'prop-types';
+
+import Box from '../common/Box';
+import Flex from '../common/Flex';
+import FlexCentered from '../common/FlexCentered';
+import Text from '../common/Text';
+
 import IconButton from '../common/IconButton';
 import DownArrowDark from '../../images/down-arrow-dark.png';
 import DownArrowWhite from '../../images/down-arrow-white.png';
@@ -8,59 +14,46 @@ import DownArrowWhite from '../../images/down-arrow-white.png';
 const SprintItemHeader = ({ item, toggle, setToggle }) => {
 	const [colorMode] = useColorMode();
 	return (
-		<Flex sx={{ alignItems: 'center' }}>
-			<Flex
-				sx={{
-					width: '3rem',
-					height: '3rem',
-					borderRadius: '50%',
-					backgroundColor: 'primary',
-					alignItems: 'center',
-					justifyContent: 'center',
-				}}
-			>
-				<Text
-					sx={{
-						fontFamily: 'body',
-						fontSize: 4,
-						fontWeight: 'bold',
-						color: 'heading',
-					}}
+		<Flex alignItems='center' flexWrap='wrap'>
+			<Flex alignItems='center' width={['100%', '100%', '60%', '60%']}>
+				<FlexCentered
+					width='3rem'
+					height='3rem'
+					borderRadius='50%'
+					backgroundColor='primary'
 				>
-					{item.count}
-				</Text>
-			</Flex>
-			<Box sx={{ ml: 4 }}>
+					<Text fontWeight='bold' color='reverse'>
+						{item.count}
+					</Text>
+				</FlexCentered>
 				<Text
-					sx={{
-						fontFamily: 'body',
-						fontSize: 4,
-						fontWeight: 'body',
-						color: 'subheading',
-						cursor: 'pointer',
-					}}
+					ml={[3, 3, 3, 4, 4]}
+					color='subheading'
+					cursor='pointer'
+					fontWeight='bold'
+					fontSize={[2, 3, 3, 4, 4]}
 					onClick={() => setToggle(!toggle)}
 				>
 					{item.name}
 				</Text>
-			</Box>
-			<Box sx={{ ml: 'auto', mr: 3 }}>
-				<Text
-					sx={{
-						fontFamily: 'body',
-						fontSize: 3,
-						fontWeight: 'body',
-						color: 'text',
-					}}
-				>
-					{item.duration}
-				</Text>
-			</Box>
-			<IconButton
-				icon={colorMode === 'default' ? DownArrowDark : DownArrowWhite}
-				width='1rem'
-				onClick={() => setToggle(!toggle)}
-			/>
+			</Flex>
+			<Flex
+				alignItems='center'
+				ml={[5, 5, 'auto', 'auto']}
+				width={['100%', '100%', '40%', '40%']}
+			>
+				<Box ml={[0, 0, 'auto', 'auto']} mr='3'>
+					<Text fontSize={[2, 2, 3, 3, 3]}>{item.duration}</Text>
+				</Box>
+				<IconButton
+					ml={['auto', 'auto', 0, 0, 0]}
+					icon={
+						colorMode === 'default' ? DownArrowDark : DownArrowWhite
+					}
+					width='1rem'
+					onClick={() => setToggle(!toggle)}
+				/>
+			</Flex>
 		</Flex>
 	);
 };

@@ -29,7 +29,11 @@ const FaqItemHeader = ({ question, toggle, setToggle }) => {
 				/>
 			</FlexCentered>
 			<Box ml='4'>
-				<Text cursor='pointer' onClick={() => setToggle(!toggle)}>
+				<Text
+					cursor='pointer'
+					fontFamily='bangla'
+					onClick={() => setToggle(!toggle)}
+				>
 					{question}
 				</Text>
 			</Box>

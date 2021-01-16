@@ -1,35 +1,24 @@
 /** @jsx jsx */
-import { jsx, Box, Heading, Text } from 'theme-ui';
+import { jsx } from 'theme-ui';
+
+import Box from './Box';
+import Heading from './Heading';
+import Text from './Text';
 import PropTypes from 'prop-types';
 
 const SectionTitle = ({ title, body }) => {
 	return (
-		<Box sx={{ textAlign: 'center' }}>
-			<Heading
-				as='h1'
-				sx={{
-					color: 'title',
-					fontFamily: 'heading',
-					fontWeight: 'heading',
-					fontSize: 6,
-					marginBottom: 4,
-				}}
-			>
+		<Box textAlign='center'>
+			<Heading fontSize={[5, 5, 5, 6, 6]} marginBottom={[3, 3, 3, 4, 4]}>
 				{title}
 			</Heading>
-			<Text
-				sx={{
-					color: 'subtitle',
-					fontFamily: 'body',
-					fontWeight: 'body',
-					fontSize: 4,
-					marginBottom: 5,
-				}}
-			>
-				{body}
-			</Text>
+			<Text marginBottom='5'>{body}</Text>
 		</Box>
 	);
 };
 
+SectionTitle.propTypes = {
+	title: PropTypes.string.isRequired,
+	body: PropTypes.string.isRequired,
+};
 export default SectionTitle;

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Heading } from 'theme-ui';
 
-const CustomHeading = ({ children, as, ...props }) => {
+const CustomHeading = ({ children, onClick, as, ...props }) => {
 	return (
 		<Heading
 			as={as || 'h1'}
@@ -12,6 +12,7 @@ const CustomHeading = ({ children, as, ...props }) => {
 				color: 'title',
 				...props,
 			}}
+			onClick={onClick}
 		>
 			{children}
 		</Heading>

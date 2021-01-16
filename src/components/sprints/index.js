@@ -1,7 +1,9 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+
+import Box from '../common/Box';
 import Container from '../common/Container';
 import SprintHeader from './SprintHeader';
 import Sprints from './Sprints';
@@ -10,11 +12,7 @@ import Congratulation from './Congratulation';
 const SprintIndex = ({ milestone }) => {
 	const [toggle, setToggle] = useState(false);
 	return (
-		<Box
-			sx={{
-				backgroundColor: 'backgroundSecondary',
-			}}
-		>
+		<Box backgroundColor='backgroundSecondary'>
 			<Container>
 				<SprintHeader
 					sprint={milestone.sprint}
@@ -23,7 +21,7 @@ const SprintIndex = ({ milestone }) => {
 					setToggle={setToggle}
 				/>
 				{toggle && (
-					<Box sx={{ py: 4 }}>
+					<Box py='4'>
 						<Sprints sprints={milestone.sprints} />
 						<Congratulation message={milestone.congratulation} />
 					</Box>

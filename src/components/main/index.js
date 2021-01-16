@@ -1,5 +1,7 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx } from 'theme-ui';
+
+import Box from '../common/Box';
 import Template from './Template';
 import getData from '../../mapdata';
 

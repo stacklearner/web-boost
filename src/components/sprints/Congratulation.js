@@ -1,59 +1,56 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Image, Text, IconButton } from 'theme-ui';
+import { jsx, Image } from 'theme-ui';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from '../../images/white.png';
+import Box from '../common/Box';
+import Flex from '../common/Flex';
+import Heading from '../common/Heading';
+import Text from '../common/Text';
+import IconButton from '../common/IconButton';
+
+import CongratulationIcon from '../../images/congratulation.png';
+import DownArrowWhite from '../../images/down-arrow-white.png';
 
 const Congratulation = ({ message }) => {
 	const [toggle, setToggle] = useState(false);
 	return (
-		<Box
-			sx={{
-				p: 3,
-				backgroundColor: 'success',
-				my: 2,
-				borderRadius: '0.25rem',
-			}}
-		>
-			<Flex sx={{ alignItems: 'center' }}>
-				<Image sx={{ width: '2rem', height: 'auto' }} src={Icon} />
-				<Text
-					sx={{
-						fontFamily: 'body',
-						fontSize: 4,
-						color: 'white',
-						ml: 4,
-					}}
-				>
-					Congratulation
-				</Text>
-				<IconButton
-					sx={{
-						ml: 'auto',
-						border: 'none',
-						outline: 'none',
-						cursor: 'pointer',
-					}}
+		<Box p='3' my='2' backgroundColor='success' borderRadius='0.25rem'>
+			<Flex alignItems='center'>
+				<Image
+					sx={{ width: '2.5rem', height: 'auto' }}
+					src={CongratulationIcon}
+				/>
+				<Heading
+					as='h2'
+					fontSize='4'
+					color='white'
+					ml='4'
+					cursor='pointer'
 					onClick={() => setToggle(!toggle)}
 				>
-					<Image
-						sx={{ width: '1.5rem', height: 'auto' }}
-						src={Icon}
-					/>
-				</IconButton>
+					Congratulations! You Made It.
+				</Heading>
+				<IconButton
+					ml='auto'
+					width='1rem'
+					icon={DownArrowWhite}
+					onClick={() => setToggle(!toggle)}
+				/>
 			</Flex>
 			{toggle && (
-				<Box sx={{ my: 4, ml: 5 }}>
-					<Text
-						sx={{ fontFamily: 'body', fontSize: 3, color: 'white' }}
-					>
+				<Box my='4' ml='5'>
+					<Text fontFamily='bangla' fontSize='3' color='white'>
 						{message}
 					</Text>
 				</Box>
 			)}
 		</Box>
 	);
+};
+
+Congratulation.propTypes = {
+	message: PropTypes.string.isRequired,
 };
 
 export default Congratulation;

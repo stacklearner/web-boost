@@ -1,19 +1,19 @@
 /** @jsx jsx */
-import { jsx, Box, Text } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
+
+import Box from '../common/Box';
+import Text from '../common/Text';
 
 const SprintItemBody = ({ item }) => {
 	return (
 		<Box>
 			<Text
-				sx={{
-					ml: 5,
-					mt: 3,
-					pl: 3,
-					fontFamily: 'body',
-					fontSize: 3,
-					color: 'text',
-				}}
+				fontFamily='bangla'
+				ml='5'
+				mt='3'
+				pl={[0, 0, 3, 3]}
+				fontSize={[2, 2, 3, 3]}
 			>
 				{item.contents.text}
 			</Text>
@@ -24,9 +24,9 @@ const SprintItemBody = ({ item }) => {
 						sx={{
 							ml: 5,
 							mt: 3,
-							pl: 3,
-							fontFamily: 'body',
-							fontSize: 3,
+							pl: [0, 0, 3, 3],
+							fontSize: [2, 2, 3, 3],
+							fontFamily: 'bangla',
 							color: 'text',
 							listDecorationStyle: 'filled',
 						}}

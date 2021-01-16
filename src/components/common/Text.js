@@ -7,7 +7,7 @@ const CustomText = ({ children, onClick, ...props }) => {
 			onClick={onClick}
 			sx={{
 				fontFamily: 'body',
-				fontSize: 3,
+				fontSize: [2, 2, 2, 3, 3],
 				fontWeight: 'body',
 				color: 'text',
 				...props,

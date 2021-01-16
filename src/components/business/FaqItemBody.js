@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const FaqItemBody = ({ item }) => {
 	return (
 		<Box>
-			<Text ml='5' mt='3' pl='3' fontSize='3'>
+			<Text fontFamily='bangla' ml='5' mt='3' pl='3' fontSize='3'>
 				{item.text}
 			</Text>
 			{item && item.keyPoints && item.keyPoints.length > 0 && (
@@ -16,7 +16,7 @@ const FaqItemBody = ({ item }) => {
 						ml: 5,
 						mt: 3,
 						pl: 3,
-						fontFamily: 'body',
+						fontFamily: 'bangla',
 						fontSize: 3,
 						color: 'text',
 						listDecorationStyle: 'filled',

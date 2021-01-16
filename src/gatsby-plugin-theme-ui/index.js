@@ -6,7 +6,7 @@ export default {
 		subtitle: '#424242',
 		background: '#FBFBFB',
 		backgroundSecondary: '#EFEFEF',
-		primary: '#EF5350',
+		primary: '#212121',
 		secondary: '#FECA57',
 		heroBg: '#FECA57',
 		heroText: '#212121',
@@ -16,6 +16,7 @@ export default {
 		milestone4: '#558B2F',
 		success: '#558B2F',
 		white: '#EFEFEF',
+		reverse: '#EFEFEF',
 		modes: {
 			dark: {
 				background: '#212121',
@@ -26,6 +27,7 @@ export default {
 				text: '#DDDDDD',
 				title: '#FBFBFB',
 				subtitle: '#EEEEEE',
+				reverse: '#212121',
 			},
 		},
 	},
@@ -33,6 +35,7 @@ export default {
 		body: 'Quicksand',
 		heading: 'Montserrat',
 		monospace: 'Menlo, monospace',
+		bangla: 'kohinoor',
 	},
 	fontWeights: {
 		body: 400,
@@ -43,6 +46,15 @@ export default {
 		body: 1.5,
 		heading: 1.125,
 	},
-	fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
-	sizes: ['80%', '70%', '50%', '25%', '100%'],
+	fontSizes: [
+		'0.75rem',
+		'0.875rem',
+		'1rem',
+		'1.25rem',
+		'1.5rem',
+		'2rem',
+		'3rem',
+		'4rem',
+		'4.5rem',
+	],
 };
