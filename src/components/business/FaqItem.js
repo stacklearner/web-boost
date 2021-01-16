@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Box from '../common/Box';
+import { Box } from '../common';
 import FaqItemHeader from './FaqItemHeader';
 import FaqItemBody from './FaqItemBody';
 

@@ -2,17 +2,12 @@
 import { jsx, useColorMode } from 'theme-ui';
 import PropTypes from 'prop-types';
 
-import Box from '../common/Box';
-import Flex from '../common/Flex';
-import FlexCentered from '../common/FlexCentered';
-import Text from '../common/Text';
-
-import IconButton from '../common/IconButton';
-import DownArrowDark from '../../images/down-arrow-dark.png';
-import DownArrowWhite from '../../images/down-arrow-white.png';
+import { Box, Flex, FlexCentered, Text, IconButton } from '../common';
+import { getIcon } from '../../assets';
 
 const SprintItemHeader = ({ item, toggle, setToggle }) => {
 	const [colorMode] = useColorMode();
+	const mode = colorMode === 'default' ? 'light' : 'dark';
 	return (
 		<Flex alignItems='center' flexWrap='wrap'>
 			<Flex alignItems='center' width={['100%', '100%', '60%', '60%']}>
@@ -47,9 +42,7 @@ const SprintItemHeader = ({ item, toggle, setToggle }) => {
 				</Box>
 				<IconButton
 					ml={['auto', 'auto', 0, 0, 0]}
-					icon={
-						colorMode === 'default' ? DownArrowDark : DownArrowWhite
-					}
+					icon={getIcon('downArrow', mode)}
 					width='1rem'
 					onClick={() => setToggle(!toggle)}
 				/>

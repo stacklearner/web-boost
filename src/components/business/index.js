@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
-import Container from '../common/Container';
-import SectionTitle from '../common/SectionTitle';
+
+import { Container, SectionTitle } from '../common';
 import Achievements from '../achievements';
 import Faqs from './Faqs';
 import getData from '../../mapdata';

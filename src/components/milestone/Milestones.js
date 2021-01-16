@@ -2,9 +2,7 @@
 import { jsx } from 'theme-ui';
 import shortid from 'shortid';
 
-import FlexCentered from '../common/FlexCentered';
-import Container from '../common/Container';
-import SectionTitle from '../common/SectionTitle';
+import { FlexCentered, Container, SectionTitle } from '../common';
 import MilestoneItem from './MilestoneItem';
 import getData from '../../mapdata';
 

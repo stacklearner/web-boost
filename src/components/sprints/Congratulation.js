@@ -3,14 +3,8 @@ import { jsx, Image } from 'theme-ui';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Box from '../common/Box';
-import Flex from '../common/Flex';
-import Heading from '../common/Heading';
-import Text from '../common/Text';
-import IconButton from '../common/IconButton';
-
-import CongratulationIcon from '../../images/congratulation.png';
-import DownArrowWhite from '../../images/down-arrow-white.png';
+import { Box, Flex, Heading, Text, IconButton } from '../common';
+import { getIcon } from '../../assets';
 
 const Congratulation = ({ title, message }) => {
 	const [toggle, setToggle] = useState(false);
@@ -19,7 +13,7 @@ const Congratulation = ({ title, message }) => {
 			<Flex alignItems='center'>
 				<Image
 					sx={{ width: '2.5rem', height: 'auto' }}
-					src={CongratulationIcon}
+					src={getIcon('congratulation')}
 				/>
 				<Heading
 					as='h2'
@@ -34,7 +28,7 @@ const Congratulation = ({ title, message }) => {
 				<IconButton
 					ml='auto'
 					width='1rem'
-					icon={DownArrowWhite}
+					icon={getIcon('downArrow', 'dark')}
 					onClick={() => setToggle(!toggle)}
 				/>
 			</Flex>

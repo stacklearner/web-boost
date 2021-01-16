@@ -1,1 +1,0 @@
-direction={index % 2 === 0 ? 'ltr' : 'rt

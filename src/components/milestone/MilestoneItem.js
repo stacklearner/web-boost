@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Flex from '../common/Flex';
-import FlexCentered from '../common/FlexCentered';
-import Heading from '../common/Heading';
-import Text from '../common/Text';
+
+import { Flex, FlexCentered, Heading, Text } from '../common';
 
 const MilestoneItem = ({ count, name, target, color }) => {
 	return (

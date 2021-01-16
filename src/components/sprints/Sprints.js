@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
-import Box from '../common/Box';
+import { Box } from '../common';
 import SprintItem from './SprintIem';
 
 const Sprints = ({ sprints }) => {

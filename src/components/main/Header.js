@@ -2,9 +2,7 @@
 import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 
-import Flex from '../common/Flex';
-import Heading from '../common/Heading';
-import Text from '../common/Text';
+import { Flex, Heading, Text } from '../common';
 
 const Header = ({ title, sprint, duration, summary }) => {
 	return (

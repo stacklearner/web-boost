@@ -1,51 +1,60 @@
 /** @jsx jsx */
 import { jsx, Image } from 'theme-ui';
-import Box from '../common/Box';
-import Container from '../common/Container';
-import Flex from '../common/Flex';
-import Text from '../common/Text';
-
-import facebook from '../../images/facebook.png';
-import youtube from '../../images/youtube.png';
-import email from '../../images/email.png';
-import linkedin from '../../images/linkedin.png';
-import twitter from '../../images/twitter.png';
+import { Box, Container, Flex, Text } from '../common';
+import { getIcon } from '../../assets';
 
 const Footer = () => {
 	return (
 		<Box py='5' mt='4' background='#000000'>
 			<Container>
 				<Flex justifyContent='center' gap='1rem'>
-					<a target='_blank' href='https://facebook.com/stacklearner'>
+					<a
+						rel='noreferrer'
+						target='_blank'
+						href='https://facebook.com/stacklearner'
+					>
 						<Image
-							src={facebook}
-							sx={{ width: '4rem', height: 'auto' }}
-						/>
-					</a>
-					<a target='_blank' href='https://youtube.com/stacklearner'>
-						<Image
-							src={youtube}
-							sx={{ width: '4rem', height: 'auto' }}
-						/>
-					</a>
-					<a target='_blank' href='mailto:support@stacklearner'>
-						<Image
-							src={email}
+							src={getIcon('facebook')}
 							sx={{ width: '4rem', height: 'auto' }}
 						/>
 					</a>
 					<a
+						rel='noreferrer'
+						target='_blank'
+						href='https://youtube.com/stacklearner'
+					>
+						<Image
+							src={getIcon('youtube')}
+							sx={{ width: '4rem', height: 'auto' }}
+						/>
+					</a>
+					<a
+						rel='noreferrer'
+						target='_blank'
+						href='mailto:support@stacklearner'
+					>
+						<Image
+							src={getIcon('email')}
+							sx={{ width: '4rem', height: 'auto' }}
+						/>
+					</a>
+					<a
+						rel='noreferrer'
 						target='_blank'
 						href='https://linkedin.com/company/stacklearner'
 					>
 						<Image
-							src={linkedin}
+							src={getIcon('linkedin')}
 							sx={{ width: '4rem', height: 'auto' }}
 						/>
 					</a>
-					<a target='_blank' href='https://twitter.com/stacklearner'>
+					<a
+						rel='noreferrer'
+						target='_blank'
+						href='https://twitter.com/stacklearner'
+					>
 						<Image
-							src={twitter}
+							src={getIcon('twitter')}
 							sx={{ width: '4rem', height: 'auto' }}
 						/>
 					</a>

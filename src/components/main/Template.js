@@ -2,12 +2,11 @@
 import { jsx, Image } from 'theme-ui';
 import PropTypes from 'prop-types';
 
-import Box from '../common/Box';
-import Flex from '../common/Flex';
-import Container from '../common/Container';
+import { Box, Flex, Container } from '../common';
 import Header from './Header';
 import Sprints from '../sprints';
-import Img from '../../images/icon.png';
+
+import { getImage } from '../../assets';
 
 const Template = ({ milestone, open }) => {
 	return (
@@ -17,7 +16,7 @@ const Template = ({ milestone, open }) => {
 					<Flex flexWrap='wrap'>
 						<Box width={['100%', '100%', '35%']}>
 							<Image
-								src={Img}
+								src={getImage(milestone.image)}
 								sx={{
 									width: '100%',
 									height: 'auto',

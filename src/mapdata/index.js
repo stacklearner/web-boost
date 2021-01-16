@@ -2,7 +2,8 @@ import data from '../data/data.json';
 
 const getData = (key) => {
 	const keys = [
-		'sites',
+		'site',
+		'trailer',
 		'milestoneSummary',
 		'bullets',
 		'milestones',

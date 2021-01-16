@@ -2,11 +2,7 @@
 import { jsx } from 'theme-ui';
 import shortid from 'shortid';
 
-import Box from '../common/Box';
-import FlexCentered from '../common/FlexCentered';
-import Heading from '../common/Heading';
-import Text from '../common/Text';
-import Container from '../common/Container';
+import { Box, FlexCentered, Container, Heading, Text } from '../common';
 
 const Item = ({ title, body }) => {
 	return (

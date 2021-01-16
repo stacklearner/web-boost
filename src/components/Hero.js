@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import { jsx, Embed } from 'theme-ui';
 
-import Box from './common/Box';
-import Heading from './common/Heading';
-import Container from './common/Container';
+import { Box, Heading, Container } from './common';
+import getData from '../mapdata';
 
 const Hero = () => {
+	const site = getData('site');
+	const trailer = getData('trailer');
 	return (
 		<Container containerSx={{ backgroundColor: 'heroBg' }}>
 			<Box>
@@ -15,7 +16,7 @@ const Hero = () => {
 						color='heroText'
 						textAlign='center'
 					>
-						Web Boost
+						{site.meta.title}
 					</Heading>
 					<Heading
 						as='h2'
@@ -24,8 +25,7 @@ const Hero = () => {
 						textAlign='center'
 						fontWeight='body'
 					>
-						A Beginner-Friendly Fullstack Web Development Course
-						Using Agile
+						{site.meta.subtitle}
 					</Heading>
 				</Box>
 				<Box
@@ -37,7 +37,7 @@ const Hero = () => {
 					width={['100%', '100%', '100%', '80%']}
 					boxShadow='0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
 				>
-					<Embed src='https://www.youtube.com/embed/Oi8q1zIGph0?controls=0' />
+					<Embed src={trailer} />
 				</Box>
 			</Box>
 		</Container>

@@ -1,14 +1,12 @@
 /** @jsx jsx */
 import { Image, jsx } from 'theme-ui';
 
-import Box from './common/Box';
-import Flex from './common/Flex';
+import { Box, Flex } from './common';
+import { getImage, getIcon } from '../assets';
 import IconButton from './common/IconButton';
-import Logo from '../images/logo.png';
-import DarkIcon from '../images/dark.png';
-import WhiteIcon from '../images/white.png';
 
 const Navbar = ({ mode, setMode }) => {
+	const lMode = mode === 'default' ? 'light' : 'dark';
 	return (
 		<Box p={3}>
 			<Flex
@@ -16,11 +14,11 @@ const Navbar = ({ mode, setMode }) => {
 				m='auto'
 				alignItems='center'
 			>
-				<Image sx={{ width: '4rem' }} src={Logo} />
+				<Image sx={{ width: '4rem' }} src={getImage('logo')} />
 
 				<Box ml='auto'>
 					<IconButton
-						icon={mode === 'default' ? DarkIcon : WhiteIcon}
+						icon={getIcon('toggle', lMode)}
 						width='1.5rem'
 						onClick={() =>
 							setMode(mode === 'default' ? 'dark' : 'default')

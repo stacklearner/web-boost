@@ -3,8 +3,7 @@ import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Box from '../common/Box';
-import Container from '../common/Container';
+import { Box, Container } from '../common';
 import SprintHeader from './SprintHeader';
 import Sprints from './Sprints';
 import Congratulation from './Congratulation';

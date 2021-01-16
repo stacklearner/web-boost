@@ -2,30 +2,19 @@
 import { jsx, Image, useColorMode } from 'theme-ui';
 import PropTypes from 'prop-types';
 
-import Flex from '../common/Flex';
-import Text from '../common/Text';
-import IconButton from '../common/IconButton';
-import SprintDarkIcon from '../../images/sprint-dark.png';
-import SprintWhiteIcon from '../../images/sprint-white.png';
-import DownArrowWhite from '../../images/down-arrow-white.png';
-import DownArrowDark from '../../images/down-arrow-dark.png';
+import { Flex, Text, IconButton } from '../common';
+import { getIcon } from '../../assets';
 
 const SprintHeader = ({ duration, sprint, toggle, setToggle }) => {
 	const [colorMode] = useColorMode();
+	const mode = colorMode === 'default' ? 'light' : 'dark';
 	return (
 		<Flex alignItems='center' flexWrap='wrap'>
 			<Flex
 				width={['100%', '100%', '100%', 'auto', 'auto']}
 				alignItems='center'
 			>
-				<Image
-					src={
-						colorMode === 'default'
-							? SprintWhiteIcon
-							: SprintDarkIcon
-					}
-					sx={{ width: '3rem' }}
-				/>
+				<Image src={getIcon('sprint', mode)} sx={{ width: '3rem' }} />
 				<Text
 					ml={[3, 3, 3, 4, 4]}
 					fontSize={[4, 4, 4, 5, 5]}
@@ -45,9 +34,7 @@ const SprintHeader = ({ duration, sprint, toggle, setToggle }) => {
 				<Text mr={[3, 3, 3, 4, 4]}>{sprint} Sprints</Text>
 				<IconButton
 					ml={['auto', 'auto', 'auto', 0, 0]}
-					icon={
-						colorMode === 'default' ? DownArrowDark : DownArrowWhite
-					}
+					icon={getIcon('downArrow', mode)}
 					width='2rem'
 					onClick={() => setToggle(!toggle)}
 				/>

@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import shortid from 'shortid';
-import Box from '../common/Box';
+
+import { Box } from '../common';
 import FaqItem from './FaqItem';
 import Congratulation from '../sprints/Congratulation';
 

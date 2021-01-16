@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Box from '../common/Box';
-import Text from '../common/Text';
+import { Box, Text } from '../common';
 import PropTypes from 'prop-types';
 
 const FaqItemBody = ({ item }) => {

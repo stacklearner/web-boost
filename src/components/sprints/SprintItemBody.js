@@ -2,8 +2,7 @@
 import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 
-import Box from '../common/Box';
-import Text from '../common/Text';
+import { Box, Text } from '../common';
 
 const SprintItemBody = ({ item }) => {
 	return (
