@@ -30,6 +30,7 @@ const FaqItemHeader = ({ question, toggle, setToggle }) => {
 			</FlexCentered>
 			<Box ml='4'>
 				<Text
+					fontSize='4'
 					cursor='pointer'
 					fontFamily='bangla'
 					onClick={() => setToggle(!toggle)}

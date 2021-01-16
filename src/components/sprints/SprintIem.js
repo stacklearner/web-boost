@@ -7,8 +7,8 @@ import Box from '../common/Box';
 import SprintItemHeader from './SprintItemHeader';
 import SprintItemBody from './SprintItemBody';
 
-const SprintItem = ({ item }) => {
-	const [toggle, setToggle] = useState(false);
+const SprintItem = ({ item, open }) => {
+	const [toggle, setToggle] = useState(open);
 	return (
 		<Box p='3' backgroundColor='background' my='2' borderRadius='0.25rem'>
 			<SprintItemHeader
@@ -23,6 +23,7 @@ const SprintItem = ({ item }) => {
 
 SprintItem.propTypes = {
 	item: PropTypes.object.isRequired,
+	open: PropTypes.bool,
 };
 
 export default SprintItem;

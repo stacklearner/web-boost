@@ -12,7 +12,9 @@ const SectionTitle = ({ title, body }) => {
 			<Heading fontSize={[5, 5, 5, 6, 6]} marginBottom={[3, 3, 3, 4, 4]}>
 				{title}
 			</Heading>
-			<Text marginBottom='5'>{body}</Text>
+			<Text lineHeight='2rem' marginBottom='5'>
+				{body}
+			</Text>
 		</Box>
 	);
 };

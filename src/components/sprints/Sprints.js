@@ -11,8 +11,12 @@ const Sprints = ({ sprints }) => {
 		<Box alignItems='center'>
 			{sprints &&
 				sprints.length > 0 &&
-				sprints.map((sprint) => (
-					<SprintItem key={shortid.generate()} item={sprint} />
+				sprints.map((sprint, index) => (
+					<SprintItem
+						open={index === 0 ? true : false}
+						key={shortid.generate()}
+						item={sprint}
+					/>
 				))}
 		</Box>
 	);

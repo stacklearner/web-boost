@@ -1,7 +1,13 @@
 import data from '../data/data.json';
 
 const getData = (key) => {
-	const keys = ['sites', 'milestoneSummary', 'bullets', 'milestones'];
+	const keys = [
+		'sites',
+		'milestoneSummary',
+		'bullets',
+		'milestones',
+		'business',
+	];
 	if (!keys.includes(key)) {
 		throw new Error('Invalid Key');
 	}

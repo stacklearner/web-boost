@@ -1,63 +1,29 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
 import Container from '../common/Container';
-import Text from '../common/Text';
 import SectionTitle from '../common/SectionTitle';
 import Achievements from '../achievements';
 import Faqs from './Faqs';
-
-const bullets = [
-	{
-		title: 'Fixed Target',
-		body:
-			'আমরা আপনাদের জন্য এক বছরের গোল সেট করে দিয়েছি এবং আপনাদের এক বছরের জন্য টার্গেট ফিক্সড',
-	},
-	{
-		title: 'Small Goal',
-		body:
-			'ছোট ছোট স্প্রিন্টের মাধ্যমে আমরা বড় গোলটাকে অনেক গুলো ছোট ছোট গোলে ভেঙ্গে ফেলেছি যেন সহজে অর্জন করা যায়',
-	},
-	{
-		title: 'Short Journey',
-		body:
-			'ছোট গোল হওয়ার কারণে জার্নিটাও অনেক ছোট হবে। রাস্তায় হোঁচট খাওয়ার সম্ভাবনাও অনেক কম থাকবে।',
-	},
-	{
-		title: 'Zero Distraction',
-		body:
-			'ছোট জার্নি ছোট রাস্তা। রাস্তা যদি ছোট হয় তাহলে এদিকে ওদিকে ডিস্ট্রাক্ট হয়ে যাওয়ারও কোনো চান্স থাকবে না',
-	},
-	{
-		title: 'Monitor Progress',
-		body:
-			'যেহেতু অনেক গুলো ছোট ছোট গোল রয়েছে, তাই আপনি সহজেই নিজের প্রোগ্রেস ট্রাক করতে পারবেন',
-	},
-	{
-		title: 'Big Achievement',
-		body:
-			'সব ছোট গোল যখন পূরণ হয়ে যাবে তখন দেখা যাবে এচিভমেন্টটা অনেক বড় হয়ে গেছে',
-	},
-];
+import getData from '../../mapdata';
 
 const Business = () => {
+	const business = getData('business');
+	const bullets = business.bullets;
+	const faq = business.faqs;
+
 	return (
 		<Box sx={{ mt: 5 }}>
 			<Container>
-				<SectionTitle
-					title='Dummy Section Title'
-					body='Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, porro illo! Vero, ipsa neque! Itaque quam tempore facere quia aspernatur quod quas. Eaque, dolorum nostrum ad totam perspiciatis iure molestias.'
-				/>
+				<SectionTitle title={business.title} body={business.summary} />
 			</Container>
 			<Achievements data={bullets} />
 			<Container containerSx={{ mt: 4 }}>
-				<SectionTitle
-					title='Dummy Section Title'
-					body='Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, porro illo! Vero, ipsa neque! Itaque quam tempore facere quia aspernatur quod quas. Eaque, dolorum nostrum ad totam perspiciatis iure molestias.'
+				<SectionTitle title={faq.title} body={faq.summary} />
+				<Faqs
+					faqs={faq.faqs}
+					message={business.congratulation.summary}
+					title={business.congratulation.title}
 				/>
-				<Faqs />
-			</Container>
-			<Container containerSx={{ backgroundColor: 'backgroundSecondary' }}>
-				<Text>I Am A Footer</Text>
 			</Container>
 		</Box>
 	);

@@ -14,7 +14,7 @@ const Main = () => {
 				milestones.map((milestone, index) => (
 					<Template
 						milestone={milestone}
-						direction={index % 2 === 0 ? 'ltr' : 'rtl'}
+						open={index === 0 ? true : false}
 					/>
 				))}
 		</Box>

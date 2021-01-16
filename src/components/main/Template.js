@@ -9,7 +9,7 @@ import Header from './Header';
 import Sprints from '../sprints';
 import Img from '../../images/icon.png';
 
-const Template = ({ milestone }) => {
+const Template = ({ milestone, open }) => {
 	return (
 		<Box>
 			<Container>
@@ -39,13 +39,14 @@ const Template = ({ milestone }) => {
 					</Flex>
 				</Box>
 			</Container>
-			<Sprints milestone={milestone} />
+			<Sprints open={open} milestone={milestone} />
 		</Box>
 	);
 };
 
 Template.propTypes = {
 	milestone: PropTypes.object.isRequired,
+	open: PropTypes.bool,
 };
 
 Template.defaultProps = {

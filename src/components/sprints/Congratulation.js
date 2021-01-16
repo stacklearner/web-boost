@@ -12,7 +12,7 @@ import IconButton from '../common/IconButton';
 import CongratulationIcon from '../../images/congratulation.png';
 import DownArrowWhite from '../../images/down-arrow-white.png';
 
-const Congratulation = ({ message }) => {
+const Congratulation = ({ title, message }) => {
 	const [toggle, setToggle] = useState(false);
 	return (
 		<Box p='3' my='2' backgroundColor='success' borderRadius='0.25rem'>
@@ -29,7 +29,7 @@ const Congratulation = ({ message }) => {
 					cursor='pointer'
 					onClick={() => setToggle(!toggle)}
 				>
-					Congratulations! You Made It.
+					{title}
 				</Heading>
 				<IconButton
 					ml='auto'
@@ -51,6 +51,11 @@ const Congratulation = ({ message }) => {
 
 Congratulation.propTypes = {
 	message: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+};
+
+Congratulation.defaultProps = {
+	title: 'Congratulations! You Made It.',
 };
 
 export default Congratulation;

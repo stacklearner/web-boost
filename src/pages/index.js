@@ -6,6 +6,7 @@ import Milestones from '../components/milestone/Milestones';
 import Achievements from '../components/achievements';
 import MainContent from '../components/main';
 import Business from '../components/business';
+import Footer from '../components/footer';
 
 import getData from '../mapdata';
 
@@ -19,6 +20,7 @@ const Index = () => {
 			<Achievements data={bullets} />
 			<MainContent />
 			<Business />
+			<Footer />
 		</Layout>
 	);
 };

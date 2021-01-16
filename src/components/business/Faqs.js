@@ -3,30 +3,15 @@ import { jsx } from 'theme-ui';
 import shortid from 'shortid';
 import Box from '../common/Box';
 import FaqItem from './FaqItem';
+import Congratulation from '../sprints/Congratulation';
 
-const faqs = [
-	{
-		question: 'What is Your Name?',
-		answer: {
-			text: 'My Name is HM Nayem',
-			keyPoints: ['Hasan', 'Mahmud', 'Nayem'],
-		},
-	},
-	{
-		question: 'What is Your Name?',
-		answer: {
-			text: 'My Name is Shegufa Taranjum',
-			keyPoints: ['Shegufa', 'Taranjum'],
-		},
-	},
-];
-
-const Faqs = () => {
+const Faqs = ({ faqs, message, title }) => {
 	return (
 		<Box>
 			{faqs.map((faq) => (
 				<FaqItem key={shortid.generate()} item={faq} />
 			))}
+			<Congratulation title={title} message={message} />
 		</Box>
 	);
 };

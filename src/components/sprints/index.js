@@ -9,8 +9,8 @@ import SprintHeader from './SprintHeader';
 import Sprints from './Sprints';
 import Congratulation from './Congratulation';
 
-const SprintIndex = ({ milestone }) => {
-	const [toggle, setToggle] = useState(false);
+const SprintIndex = ({ milestone, open }) => {
+	const [toggle, setToggle] = useState(open);
 	return (
 		<Box backgroundColor='backgroundSecondary'>
 			<Container>
